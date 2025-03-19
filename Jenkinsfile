@@ -4,8 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                chmod +x ./mvnw
-                ./mvnw install
+                script {
+                    if (isUnix()) {
+                        sh 'chmod +x ./mvnw && ./mvnw install'
+                    } else {
+                        bat '.\\mvnw.cmd install'
+                    }
+                }
             }
         }
     }
