@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "npx cypress open"
+  },
   "devDependencies": {
     "cypress": "^14.2.0"
   }
